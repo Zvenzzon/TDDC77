@@ -1,0 +1,32 @@
+package lab2.ord;
+import java.util.Scanner;
+import java.lang.String;
+
+
+public class AntalOrd {
+	String mening;
+	int skiljetecken;
+	double medel;
+	int bokstäver;
+	int ord;
+	
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Skriv in din mening:  ");
+		String mening = input.nextLine();
+		
+		int ord =  mening.split("\\s").length;
+		int bokstäver = mening.replace(" ", "").length();
+		int skiljetecken = mening.length() - mening.replace(" ", "").length();
+		double medel = (double)bokstäver / ord;
+		
+		System.out.println("Antal bokstäver: "+ bokstäver + " st");
+		
+		System.out.println("Antal ord: " + mening.split("\\s").length + " st");
+		
+		System.out.println("Antal skiljetecken: "+ skiljetecken + " st");
+		
+		System.out.println("Medellängd på ord: "+ medel + " bokstäver");
+
+	}
+}
